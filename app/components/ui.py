@@ -5,235 +5,245 @@ import pandas as pd
 
 
 def style():
-    st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+    st.markdown(
+        """
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 
-    /* Main background */
-    .stApp,
-    [data-testid="stAppViewContainer"] {
-        background: #0b1020 !important;
-        color: #ffffff !important;
-        font-family: 'DM Sans', sans-serif;
-    }
+        /* Main application background */
+        .stApp,
+        [data-testid="stAppViewContainer"] {
+            background: #0b1020 !important;
+            color: #ffffff !important;
+            font-family: 'DM Sans', sans-serif !important;
+        }
 
-    .block-container {
-        max-width: 1420px;
-        padding-top: 1.6rem;
-    }
-/* Streamlit top header and toolbar */
-header[data-testid="stHeader"],
-[data-testid="stHeader"],
-.stAppHeader {
-    background: #0b1020 !important;
-    color: #ffffff !important;
-}
+        .block-container {
+            max-width: 1420px;
+            padding-top: 1.6rem;
+        }
 
-[data-testid="stToolbar"] {
-    background: #0b1020 !important;
-}
+        /* Top Streamlit header */
+        header[data-testid="stHeader"],
+        [data-testid="stHeader"],
+        .stAppHeader {
+            background: #0b1020 !important;
+            color: #ffffff !important;
+        }
 
-[data-testid="stDecoration"] {
-    background: #6366f1 !important;
-}
-    /* All headings */
-    h1, h2, h3, h4, h5, h6 {
-        color: #ffffff !important;
-        font-family: 'Manrope', sans-serif !important;
-        letter-spacing: -0.03em;
-    }
+        [data-testid="stToolbar"] {
+            background: #0b1020 !important;
+        }
 
-    /* All normal text */
-    p, li, label, span, small,
-    [data-testid="stMarkdownContainer"],
-    [data-testid="stMarkdownContainer"] p {
-        color: #f1f5f9;
-    }
+        [data-testid="stDecoration"] {
+            background: #6366f1 !important;
+        }
 
-    /* Sidebar */
-    [data-testid="stSidebar"] {
-        background: #0d1426 !important;
-        border-right: 1px solid #263550;
-    }
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff !important;
+            font-family: 'Manrope', sans-serif !important;
+            letter-spacing: -0.03em;
+        }
 
-    [data-testid="stSidebar"] p,
-    [data-testid="stSidebar"] span,
-    [data-testid="stSidebar"] label,
-    [data-testid="stSidebar"] h1,
-    [data-testid="stSidebar"] h2,
-    [data-testid="stSidebar"] h3 {
-        color: #ffffff !important;
-    }
+        /* General text */
+        p, li, label, span, small,
+        [data-testid="stMarkdownContainer"],
+        [data-testid="stMarkdownContainer"] p {
+            color: #f1f5f9;
+        }
 
-   /* Hero */
-.hero {
-    padding: 26px 30px;
-    border-radius: 18px;
-    background: linear-gradient(
-        115deg, #1e1b4b, #312e81 58%, #4338ca
-    );
-    border: 1px solid #6366f1;
-    margin-bottom: 18px;
-}
+        /* Sidebar */
+        [data-testid="stSidebar"] {
+            background: #0d1426 !important;
+            border-right: 1px solid #263550 !important;
+        }
 
-    .kicker {
-        font-size: 11px;
-        letter-spacing: .15em;
-        color: #a9c5ff !important;
-        font-weight: 700;
-    }
+        [data-testid="stSidebar"] p,
+        [data-testid="stSidebar"] span,
+        [data-testid="stSidebar"] label,
+        [data-testid="stSidebar"] h1,
+        [data-testid="stSidebar"] h2,
+        [data-testid="stSidebar"] h3 {
+            color: #ffffff !important;
+        }
 
-    .hero h1 {
-        font-size: 32px;
-        color: #ffffff !important;
-        margin: 8px 0;
-    }
+        /* Hero section */
+        .hero {
+            padding: 26px 30px;
+            border-radius: 18px;
+            background: linear-gradient(
+                115deg,
+                #1e1b4b,
+                #312e81 58%,
+                #4338ca
+            );
+            border: 1px solid #6366f1;
+            margin-bottom: 18px;
+        }
 
-    .hero p {
-        color: #e2e8f0 !important;
-        font-size: 14px;
-    }
+        .kicker {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            color: #c7d2fe !important;
+            font-weight: 700;
+        }
 
-    /* Metric cards */
-    div[data-testid="stMetric"] {
-        background: #111a2d;
-        border: 1px solid #263550;
-        border-radius: 14px;
-        padding: 14px;
-    }
+        .hero h1 {
+            font-size: 32px;
+            color: #ffffff !important;
+            margin: 8px 0;
+        }
 
-    div[data-testid="stMetricLabel"],
-    div[data-testid="stMetricLabel"] p {
-        color: #cbd5e1 !important;
-        font-size: 13px;
-    }
+        .hero p {
+            color: #e2e8f0 !important;
+            font-size: 14px;
+        }
 
-    div[data-testid="stMetricValue"],
-    div[data-testid="stMetricValue"] * {
-        color: #ffffff !important;
-    }
+        /* Metric cards */
+        div[data-testid="stMetric"] {
+            background: #111a2d !important;
+            border: 1px solid #263550 !important;
+            border-radius: 14px;
+            padding: 14px;
+        }
 
-    div[data-testid="stMetricDelta"],
-    div[data-testid="stMetricDelta"] * {
-        color: #cbd5e1 !important;
-    }
+        div[data-testid="stMetricLabel"],
+        div[data-testid="stMetricLabel"] p {
+            color: #cbd5e1 !important;
+            font-size: 13px;
+        }
 
-    /* Panels */
-    .panel {
-        background: #111a2d;
-        border: 1px solid #263550;
-        border-radius: 14px;
-        padding: 18px;
-        color: #ffffff !important;
-    }
+        div[data-testid="stMetricValue"],
+        div[data-testid="stMetricValue"] * {
+            color: #ffffff !important;
+        }
 
-    /* Buttons */
-    .stButton > button {
-        color: #ffffff !important;
-        border: 1px solid #526b96;
-        border-radius: 10px;
-        font-weight: 600;
-        background: #17243d;
-    }
+        div[data-testid="stMetricDelta"],
+        div[data-testid="stMetricDelta"] * {
+            color: #cbd5e1 !important;
+        }
 
-    .stButton > button[kind="primary"] {
-        background: linear-gradient(90deg, #617df0, #8265d9);
-        border: 0;
-        border-radius: 10px;
-        color: #ffffff !important;
-        font-weight: 700;
-    }
+        /* Panels */
+        .panel {
+            background: #111a2d;
+            border: 1px solid #263550;
+            border-radius: 14px;
+            padding: 18px;
+            color: #ffffff !important;
+        }
 
-    /* File uploader */
-    /* File uploader */
-div[data-testid="stFileUploader"] {
-    background: #111a2d !important;
-    border: 1px dashed #6366f1 !important;
-    border-radius: 14px;
-    color: #ffffff !important;
-}
+        /* Buttons */
+        .stButton > button {
+            color: #ffffff !important;
+            border: 1px solid #526b96 !important;
+            border-radius: 10px;
+            font-weight: 600;
+            background: #17243d !important;
+        }
 
-div[data-testid="stFileUploader"] section {
-    background: #111a2d !important;
-}
+        .stButton > button[kind="primary"] {
+            background: linear-gradient(
+                90deg, #617df0, #8265d9
+            ) !important;
+            border: 0 !important;
+            border-radius: 10px;
+            color: #ffffff !important;
+            font-weight: 700;
+        }
 
-div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] {
-    background: #17243d !important;
-    border: 1px dashed #6366f1 !important;
-}
+        /* PDF uploader */
+        div[data-testid="stFileUploader"] {
+            background: #111a2d !important;
+            border: 1px dashed #6366f1 !important;
+            border-radius: 14px;
+            color: #ffffff !important;
+            padding: 8px;
+        }
 
-div[data-testid="stFileUploader"] * {
-    color: #ffffff !important;
-}
+        div[data-testid="stFileUploader"] section {
+            background: #111a2d !important;
+        }
 
-div[data-testid="stFileUploader"] button {
-    background: #312e81 !important;
-    color: #ffffff !important;
-    border: 1px solid #6366f1 !important;
-}
-    /* Inputs */
-    input, textarea {
-        color: #ffffff !important;
-        background-color: #111a2d !important;
-    }
+        div[data-testid="stFileUploaderDropzone"] {
+            background: #17243d !important;
+            border: 1px dashed #6366f1 !important;
+            border-radius: 12px !important;
+        }
 
-    [data-baseweb="select"] * {
-        color: #ffffff !important;
-    }
+        div[data-testid="stFileUploader"] * {
+            color: #ffffff !important;
+        }
 
-    /* Expanders */
-    [data-testid="stExpander"] {
-        background: #111a2d;
-        border: 1px solid #263550;
-        border-radius: 12px;
-        color: #ffffff !important;
-    }
+        div[data-testid="stFileUploaderDropzone"] button {
+            background: #312e81 !important;
+            color: #ffffff !important;
+            border: 1px solid #6366f1 !important;
+        }
 
-    [data-testid="stExpander"] summary,
-    [data-testid="stExpander"] summary p {
-        color: #ffffff !important;
-    }
+        /* Inputs */
+        input, textarea {
+            color: #ffffff !important;
+            background-color: #111a2d !important;
+        }
 
-    /* Tabs */
-    button[data-baseweb="tab"] {
-        color: #cbd5e1 !important;
-    }
+        [data-baseweb="select"] * {
+            color: #ffffff !important;
+        }
 
-    button[data-baseweb="tab"][aria-selected="true"] {
-        color: #ffffff !important;
-    }
+        /* Expanders */
+        [data-testid="stExpander"] {
+            background: #111a2d !important;
+            border: 1px solid #263550 !important;
+            border-radius: 12px;
+            color: #ffffff !important;
+        }
 
-    /* Captions */
-    [data-testid="stCaptionContainer"] {
-        color: #cbd5e1 !important;
-    }
+        [data-testid="stExpander"] summary,
+        [data-testid="stExpander"] summary p {
+            color: #ffffff !important;
+        }
 
-    /* Links */
-    a {
-        color: #93b4ff !important;
-    }
+        /* Tabs */
+        button[data-baseweb="tab"] {
+            color: #cbd5e1 !important;
+        }
 
-    /* Alerts */
-    [data-testid="stAlert"] {
-        color: #ffffff !important;
-    }
+        button[data-baseweb="tab"][aria-selected="true"] {
+            color: #ffffff !important;
+        }
 
-    [data-testid="stAlert"] p {
-        color: #ffffff !important;
-    }
+        /* Captions */
+        [data-testid="stCaptionContainer"],
+        [data-testid="stCaptionContainer"] * {
+            color: #cbd5e1 !important;
+        }
 
-    /* Dataframes */
-    [data-testid="stDataFrame"] {
-        color: #ffffff !important;
-    }
+        /* Links */
+        a {
+            color: #93b4ff !important;
+        }
 
-    /* Dividers */
-    hr {
-        border-color: #263550 !important;
-    }
+        /* Alerts */
+        [data-testid="stAlert"],
+        [data-testid="stAlert"] p {
+            color: #ffffff !important;
+        }
 
-    </style>
-    """, unsafe_allow_html=True)
+        /* Dataframes */
+        [data-testid="stDataFrame"] {
+            color: #ffffff !important;
+        }
+
+        /* Dividers */
+        hr {
+            border-color: #263550 !important;
+        }
+
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 def hero(section, title, desc):
@@ -277,13 +287,27 @@ def donut(counts):
         }
     )
 
-   fig.update_layout(
-    paper_bgcolor="rgba(0,0,0,0)",
-    plot_bgcolor="rgba(0,0,0,0)",
-    font_color="#ffffff",
-    legend_title_text="",
-    height=300,
-    margin=dict(l=5, r=5, t=5, b=5)
-)
+    fig.update_layout(
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(
+            color="#ffffff",
+            size=12
+        ),
+        legend=dict(
+            title_text="",
+            font=dict(
+                color="#ffffff",
+                size=12
+            ),
+            bgcolor="rgba(0,0,0,0)"
+        ),
+        height=300,
+        margin=dict(l=5, r=5, t=5, b=5)
+    )
+
+    fig.update_traces(
+        textfont=dict(color="#0b1020")
+    )
 
     st.plotly_chart(fig, use_container_width=True)
