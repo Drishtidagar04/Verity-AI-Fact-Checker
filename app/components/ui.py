@@ -51,16 +51,16 @@ def style():
         color: #ffffff !important;
     }
 
-    /* Hero */
-    .hero {
-        padding: 26px 30px;
-        border-radius: 18px;
-        background: linear-gradient(
-            115deg, #12203e, #20375f 58%, #392f68
-        );
-        border: 1px solid #3a5076;
-        margin-bottom: 18px;
-    }
+   /* Hero */
+.hero {
+    padding: 26px 30px;
+    border-radius: 18px;
+    background: linear-gradient(
+        115deg, #1e1b4b, #312e81 58%, #4338ca
+    );
+    border: 1px solid #6366f1;
+    margin-bottom: 18px;
+}
 
     .kicker {
         font-size: 11px;
@@ -131,17 +131,32 @@ def style():
     }
 
     /* File uploader */
-    div[data-testid="stFileUploader"] {
-        background: #111a2d;
-        border: 1px dashed #526b96;
-        border-radius: 14px;
-        color: #ffffff !important;
-    }
+    /* File uploader */
+div[data-testid="stFileUploader"] {
+    background: #111a2d !important;
+    border: 1px dashed #6366f1 !important;
+    border-radius: 14px;
+    color: #ffffff !important;
+}
 
-    div[data-testid="stFileUploader"] * {
-        color: #f1f5f9 !important;
-    }
+div[data-testid="stFileUploader"] section {
+    background: #111a2d !important;
+}
 
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] {
+    background: #17243d !important;
+    border: 1px dashed #6366f1 !important;
+}
+
+div[data-testid="stFileUploader"] * {
+    color: #ffffff !important;
+}
+
+div[data-testid="stFileUploader"] button {
+    background: #312e81 !important;
+    color: #ffffff !important;
+    border: 1px solid #6366f1 !important;
+}
     /* Inputs */
     input, textarea {
         color: #ffffff !important;
