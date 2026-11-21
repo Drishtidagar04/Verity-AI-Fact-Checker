@@ -21,7 +21,21 @@ def style():
         max-width: 1420px;
         padding-top: 1.6rem;
     }
+/* Streamlit top header and toolbar */
+header[data-testid="stHeader"],
+[data-testid="stHeader"],
+.stAppHeader {
+    background: #0b1020 !important;
+    color: #ffffff !important;
+}
 
+[data-testid="stToolbar"] {
+    background: #0b1020 !important;
+}
+
+[data-testid="stDecoration"] {
+    background: #6366f1 !important;
+}
     /* All headings */
     h1, h2, h3, h4, h5, h6 {
         color: #ffffff !important;
@@ -263,13 +277,13 @@ def donut(counts):
         }
     )
 
-    fig.update_layout(
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)",
-        font_color="#ffffff",
-        legend_title_text="",
-        height=300,
-        margin=dict(l=5, r=5, t=5, b=5)
-    )
+   fig.update_layout(
+    paper_bgcolor="rgba(0,0,0,0)",
+    plot_bgcolor="rgba(0,0,0,0)",
+    font_color="#ffffff",
+    legend_title_text="",
+    height=300,
+    margin=dict(l=5, r=5, t=5, b=5)
+)
 
     st.plotly_chart(fig, use_container_width=True)
